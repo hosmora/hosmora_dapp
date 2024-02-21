@@ -2,5 +2,7 @@ HosMora, Revolutionary Web3 Mora game protocol. Utilize games, contracts, and si
 
 ## Compile and start
 yarn
+
 yarn dev
+
 yarn build
