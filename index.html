@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/logo-white-96.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/logo-white-96.ico" type="image/x-icon">
+    <!-- <link rel="manifest" href="/app.webmanifest"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HosMora</title>
+    <meta
+      name="keywords"
+      content="HosMora.com,HosMora,Mora,Crypto HosMora,Crypto Games,Web3 Mora, GameFi, Web3, Web3.0"
+    />
+    <meta
+      name="description"
+      content="Revolutionary Web3 Mora game protocol. Utilize games, contracts, and signature encryption to achieve fair and secure PVP games"
+    />
+    <meta name="og:site_name" content="HosMora" />
+    <meta property="og:title" content="HosMora" />
+    <meta name="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Revolutionary Web3 Mora game protocol. Utilize games, contracts, and signature encryption to achieve fair and secure PVP games"
+    />
+    <meta property="og:url" content="https://hosmora.com" />
+    <meta property="og:image" content="https://hosmora.com/logo.png" />
+    <meta name="twitter:site" content="HosMora" />
+    <meta name="twitter:title" content="HosMora" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:description"
+      content="Revolutionary Web3 Mora game protocol. Utilize games, contracts, and signature encryption to achieve fair and secure PVP games"
+    />
+    <meta name="twitter:url" content="https://hosmora.com" />
+    <meta name="twitter:image" content="https://hosmora.com/logo.png" />
+    <meta name="google-site-verification" content="gnoVut7hWe83KXhpY0UeaMufZpgkMh2SDWNOLYCMtys" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLFH6J4SXL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-TLFH6J4SXL')
+    </script>
+    <!-- Google tag (gtag.js) event - delayed navigation helper -->
+    <script>
+      // Helper function to delay opening a URL until a gtag event is sent.
+      // Call it in response to an action that should navigate to a URL.
+      function gtagSendEvent(url) {
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url
+          }
+        }
+        gtag('event', 'manual_event_PAGE_VIEW', {
+          event_callback: callback,
+          event_timeout: 2000
+          // <event_parameters>
+        })
+        return false
+      }
+      gtagSendEvent()
+    </script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <!-- <script type="module" src="/app.js"></script>
+    <script src="/cachelist.js" defer></script> -->
+  </body>
+</html>

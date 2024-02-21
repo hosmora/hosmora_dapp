@@ -1,0 +1,211 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_referrerLevelContract",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_secondaryOwner",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "winAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "platform",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastingBind",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "referrer",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "player",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "winAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DistributionAmount.WinAmountDistribute",
+        "name": "distribute",
+        "type": "tuple"
+      }
+    ],
+    "name": "gameDistributeProfits",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "winAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "winAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getWinAmountDistribute",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "platform",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastingBind",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "referrer",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "player",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "winAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DistributionAmount.WinAmountDistribute",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_secondaryOwner",
+        "type": "address"
+      }
+    ],
+    "name": "setSecondaryOwner",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

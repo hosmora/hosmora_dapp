@@ -1,0 +1,765 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_hosMoraContract",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_referrerLevelContract",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "finishGameLog",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "bout",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "p1Address",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "p1Referrer",
+            "type": "address"
+          },
+          {
+            "internalType": "enum HosMoraContract.BetType",
+            "name": "p1Bet",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "p1Timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "p2Address",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "p2Referrer",
+            "type": "address"
+          },
+          {
+            "internalType": "enum HosMoraContract.BetType",
+            "name": "p2Bet",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "p2Timestamp",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "platform",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastingBind",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "referrer",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "player",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "winAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DistributionAmount.WinAmountDistribute",
+            "name": "winAmountDistribute",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HosMoraContract.GameInfo[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "bout",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "getGameInfoedByBout",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "bout",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "p1Address",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "p1Referrer",
+            "type": "address"
+          },
+          {
+            "internalType": "enum HosMoraContract.BetType",
+            "name": "p1Bet",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "p1Timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "p2Address",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "p2Referrer",
+            "type": "address"
+          },
+          {
+            "internalType": "enum HosMoraContract.BetType",
+            "name": "p2Bet",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "p2Timestamp",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "platform",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastingBind",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "referrer",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "player",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "winAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DistributionAmount.WinAmountDistribute",
+            "name": "winAmountDistribute",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HosMoraContract.GameInfo",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "page",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "limit",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getGameLog",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "total",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "page",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "limit",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "bout",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "p1Address",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "p1Referrer",
+                "type": "address"
+              },
+              {
+                "internalType": "enum HosMoraContract.BetType",
+                "name": "p1Bet",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "p1Timestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "p2Address",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "p2Referrer",
+                "type": "address"
+              },
+              {
+                "internalType": "enum HosMoraContract.BetType",
+                "name": "p2Bet",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "p2Timestamp",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint256",
+                    "name": "platform",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "lastingBind",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "referrer",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "player",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "winAmount",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct DistributionAmount.WinAmountDistribute",
+                "name": "winAmountDistribute",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct HosMoraContract.GameInfo[]",
+            "name": "infos",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct GameLogSearch.GameInfoPagination",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "page",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "limit",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getGameLogLastingBind",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "total",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "page",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "limit",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "p1BindReferrer",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "p2BindReferrer",
+                "type": "address"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint256",
+                    "name": "bout",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "p1Address",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "p1Referrer",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "enum HosMoraContract.BetType",
+                    "name": "p1Bet",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "p1Timestamp",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "p2Address",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "address",
+                    "name": "p2Referrer",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "enum HosMoraContract.BetType",
+                    "name": "p2Bet",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "p2Timestamp",
+                    "type": "uint256"
+                  },
+                  {
+                    "components": [
+                      {
+                        "internalType": "uint256",
+                        "name": "platform",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "lastingBind",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "referrer",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "player",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "winAmount",
+                        "type": "uint256"
+                      }
+                    ],
+                    "internalType": "struct DistributionAmount.WinAmountDistribute",
+                    "name": "winAmountDistribute",
+                    "type": "tuple"
+                  }
+                ],
+                "internalType": "struct HosMoraContract.GameInfo",
+                "name": "gameinfo",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct GameLogSearch.LastingBindGameInfo[]",
+            "name": "infos",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct GameLogSearch.LastingBindGameLogPagination",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getIncomeCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getLastingBindAmountCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getLastingBindIncomeCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getPlayAmountCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      }
+    ],
+    "name": "getPlayIncomeCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_referrerLevelContract",
+        "type": "address"
+      }
+    ],
+    "name": "setDistributionAmount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_hosMoraContract",
+        "type": "address"
+      }
+    ],
+    "name": "setHosMoraContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
